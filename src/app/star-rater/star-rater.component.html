@@ -1,0 +1,15 @@
+<div>
+  Rating: <i>{{ ratingText }}</i>
+</div>
+
+<div class="stars" [ngClass]="{ disabled: disabled }">
+  <ng-container *ngFor="let star of ratings">
+    <i
+      class="fa fa-star"
+      [ngClass]="{ selected: star.stars <= _value }"
+      (click)="setRating(star)"
+      (mouseover)="onMouseover(star)"
+      (mouseout)="onMouseout()"
+    ></i>
+  </ng-container>
+</div>
